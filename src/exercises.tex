@@ -1,0 +1,32 @@
+\documentclass{tufte-book}
+
+\input{preamble}
+
+\begin{document}
+
+\frontmatter
+
+%% \blankpage
+
+\maketitle
+
+\tableofcontents
+
+%% \listoffigures
+
+%% \listoftables
+
+\mainmatter
+
+\setcounter{chapter}{1}
+\include{ch2}
+
+\backmatter
+
+\bibliography{exercises}
+\bibliographystyle{plainnat}
+
+\phantomsection
+\printglossaries
+
+\end{document}
