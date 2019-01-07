@@ -18,7 +18,7 @@ with import nixpkgs {
     (self: super: {
       xelatex = super.texlive.combine {
         inherit (super.texlive) scheme-small
-          # braket
+          braket
           datatool
           # ebproof
           enumitem
@@ -45,7 +45,7 @@ with import nixpkgs {
 
   drv = stdenv.mkDerivation rec {
     name = "abstract-algebra-pinter-${version}";
-    version = "0.0.1";
+    version = "0.1.0";
     src = ./.;
 
     buildInputs = [

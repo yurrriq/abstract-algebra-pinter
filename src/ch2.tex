@@ -5,20 +5,604 @@
 \begin{enumerate}[label={\Alph*.},font={\bfseries}]
   \item {\bf Examples of Operations}
     \begin{enumerate}[label={\arabic*},font={\bfseries}]
-      \item $a \ast b = \sqrt{\abs{ab}}$ is not an operation on $\mathbb{Q}$,
-        because e.g. $2 \ast 1 = \sqrt{\abs{2}} \not\in \mathbb{Q}$.
-      \item $a \ast b = a \ln b$ is not an operation on $\mathbb{R}_{>0}$,
+      \item $a * b = \sqrt{\abs{ab}}$ is not an operation on $\mathbb{Q}$,
+        because e.g. $2 * 1 = \sqrt{\abs{2}} \not\in \mathbb{Q}$.
+      \item $a * b = a \ln b$ is not an operation on $\mathbb{R}_{>0}$,
         because e.g. $\forall a, b \in \mathbb{R}_{>0} (b \le 1 \to a \ln b
         \not\in \mathbb{R}_{>0})$
-      \item If $a \ast b$ is a root of the equation $x^{2} - a^{2}b^{2}=0$,
-        $\ast$ is not an operation on $\mathbb{R}$, because
+      \item If $a * b$ is a root of the equation $x^2 - a^2b^2=0$,
+        $*$ is not an operation on $\mathbb{R}$, because
         $\forall a,b \in \mathbb{R} (a \ne 0 \land b \ne 0 \to x = \pm ab)$
       \item Subtraction is an operation on $\mathbb{Z}$, because
         $\forall a,b \in \mathbb{Z} (a-b \in \mathbb{Z})$.
       \item Subtraction is not an operation on $\mathbb{Z}_{\ge 0}$, because
         e.g. $0-1 \not\in \mathbb{Z}_{\ge 0}$.
-      \item $a \ast b = \abs{a-b}$ is an operation on $\mathbb{Z}_{\ge 0}$,
+      \item $a * b = \abs{a-b}$ is an operation on $\mathbb{Z}_{\ge 0}$,
         because $\forall a,b \in \mathbb{Z}_{\ge 0} (\abs{a-b} \in
         \mathbb{Z}_{\ge 0})$.
+    \end{enumerate}
+  \item {\bf Properties of Operations}
+    \begin{enumerate}[label={\arabic*},font={\bfseries}]
+      \item $x*y=x+2y+4$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is not commutative.
+            \begin{align*}
+              x*y &= x+2y+4 \\
+              y*x &= y+2x+4 \\
+              x*y &\neq y*x
+            \end{align*}
+          \item $*$ is not associative.
+            \begin{align*}
+              x*(y*z) &= x*(y+2z+4) \\
+              &= x+2(y+2z+4)+4 \\
+              &= x+2y+4z+12 \\
+              (x*y)*z &= (x+2y+4)*z \\
+              &= x+2y+4+2z+4 \\
+              &= x+2y+2z+8 \\
+              x+2y+4z+12 &\neq x+2y+2z+8
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              x+2e+4 &= x \\
+              2e+4 &= 0 \\
+              e &= -2 \\
+              e*x &= x \\
+              e+2x+4 &= x \\
+              e &= -x-4 \neq -2
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+      \item $x*y=x+2y-xy$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is not commutative.
+            \begin{align*}
+              x*y &= x+2y-xy \\
+              y*x &= y+2x-yx \\
+              x*y &\neq y*x
+            \end{align*}
+          \item $*$ is not associative.
+            \begin{align*}
+              x*(y*z) &= x*(y+2z-yz) \\
+              &= x+2(y+2z-yz)-x(y+2z-yz) \\
+              &= x+2y+4z-2yz-xy-2xz+xyz \\
+              (x*y)*z &= (x+2y-xy)*z \\
+              &=(x+2y-xy)+2z-(x+2y-xy)z \\
+              &=x+2y+2z-2yz-xy-xz+xyz \\
+              x*(y*z) &\neq (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              x+2e-xe &= x \\
+              2e-xe &= 0 \\
+              e(2-x) &= 0 \\
+              e &=0 \\
+              e*x &= x \\
+              e+2x-ex &= x \\
+              e+x-ex &= 0 \\
+              e(1-x) &= -x \\
+              e &= -x(1-x) \neq 0
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+      \item $x*y=\abs{x+y}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative.
+            \begin{align*}
+              x*y &= \abs{x+y} \\
+              y*x &= \abs{y+x} = \abs{x+y} \\
+              x*y &= y*x
+            \end{align*}
+          \item $*$ is not associative.
+            \begin{align*}
+              x*(y*z) &= x*\abs{y+z} = \abs{x+\abs{y+z}} \\
+              (x*y)*z &= \abs{x+y}*z = \abs{\abs{x+y}+z} \\
+              x=0,y<0 \to x*(y*z) &= \abs{y+z} \\
+              (x*y)*z &= \abs{\abs{y}+z} \\
+              y<0 \to y \neq \abs{y} \to \abs{y+z} &\neq \abs{\abs{y}+z}\\
+              x*(y*z) &\neq (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ has an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              \abs{x+e} &= x \\
+              e &= 0 \\
+              e*x &= x \\
+              \abs{e+x} &= x \\
+              e &= 0
+            \end{align*}
+          \item Every $x\in\mathbb{R}$ has an inverse with respect to $*$.
+            \begin{align*}
+              x*x^\prime &= 0 \\
+              \abs{x+x^\prime} &= 0 \\
+              x^\prime = -x \\
+              x*(-x) &= \abs{x-x} = 0 \\
+              (-x)*x &= \abs{-x+x} = 0 \\
+              x*x^\prime &= x^\prime*x
+            \end{align*}
+        \end{enumerate}
+      \item $x*y=\abs{x-y}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative.
+            \begin{align*}
+              x*y &= \abs{x-y} \\
+              y*x &= \abs{y-x} \\
+              x=y \to x*y &= 0 \\
+              y*x &= 0 \\
+            \end{align*}
+            If $x<y$ then $x=y+k$, and:
+            \begin{align*}
+              x*y &= \abs{(y+k)-y} = \abs{k} \\
+              y*x &= \abs{y-(y+k)} = \abs{-k} = \abs{k} \\
+              x*y &= y*x
+            \end{align*}
+            If $x=y$:
+            \begin{align*}
+              x*y &= \abs{y-y} = 0 \\
+              y*x &= \abs{y-y} = 0 \\
+              x*y &= y*x
+            \end{align*}
+            If $x>y$ then $y=x+k$, and:
+            \begin{align*}
+              x*y &= \abs{x-(x+k)} = \abs{-k} = \abs{k}\\
+              y*x &= \abs{(x+k)-x} = \abs{k} \\
+              x*y &= y*x
+            \end{align*}
+          \item $*$ is not associative.
+            \begin{align*}
+              x*(y*z) &= x*\abs{y-z} \\
+              &= \abs{x-\abs{y-z}} \\
+              (x*y)*z &= \abs{x-y}*z \\
+              &= \abs{\abs{x-y}-z} \\
+            \end{align*}
+            If $x=0$ and $y<0$:
+            \begin{align*}
+              x*(y*z) = \abs{-\abs{y-z}} = \abs{y-z} &= \sqrt{(y-z)^2} \\
+              (x*y)*z = \abs{\abs{-y}-z} = \abs{\abs{y}-z} &= \sqrt{(\abs{y}-z)^2} \\
+              \abs{y} &\neq y \\
+              x*(y*z) &\neq (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              \abs{x-e} &= x \\
+              e &= 2x
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+      \item $x*y=xy+1$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative.
+            \begin{align*}
+              x*y &= xy+1 \\
+              y*x &= yx+1 = xy+1 \\
+              x*y &= y*x
+            \end{align*}
+          \item $*$ is not associative.
+            \begin{align*}
+              x*(y*z) &= x*(yz+1) \\
+              &= x(yz+1)+1 = xyz+x +1 \\
+              (x*y)*z &= (xy+1)*z \\
+              &= (xy+1)z+1 = xyz+z+1 \\
+              x*(y*z) &\neq (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              xe+1 &= x \\
+              xe &= x-1 \\
+              x &= 1-\frac{1}{x}
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+      \item $x*y=\text{max}\Set{x,y}=\text{the larger of the two numbers $x$ and $y$}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative.
+            \begin{align*}
+              x*y &= \text{max}\Set{x,y} \\
+              y*x &= \text{max}\Set{y,x} = \text{max}\Set{x,y} \\
+              x*y &= y*x
+            \end{align*}
+          \item $*$ is associative.
+            \begin{align*}
+              x*(y*z) &= x*\text{max}\Set{y,z} \\
+              &= \text{max}\Set{x,\text{max}\Set{y,z}} = \text{max}\Set{x,y,z} \\
+              (x*y)*z &= (\text{max}\Set{x,y})*z \\
+              &= \text{max}\Set{\text{max}\Set{x,y},z} = \text{max}\Set{x,y,z} \\
+              x*(y*z) &= (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              \text{max}\Set{x,e} &= x \\
+              e &= \{ n\in\mathbb{R} : n \leq x \}
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+      \item $x*y=\frac{xy}{x+y+1}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative.
+            \begin{align*}
+              x*y &= \frac{xy}{x+y+1} \\
+              y*x &= \frac{yx}{y+x+1} = \frac{xy}{x+y+1} \\
+              x*y &= y*x
+            \end{align*}
+          \item $*$ is associative.
+            \begin{align*}
+              x*(y*z) &= x*(\frac{yz}{y+z+1}) \\
+              &= \frac{\frac{xyz}{y+z+1}}{x+\frac{yz}{y+z+1}+1} \\
+              &= \frac{xyz}{x(y+z+1)+yz+(y+z+1)} \\
+              &= \frac{xyz}{xy+xz+yz+x+y+z+1} \\
+              (x*y)*z &= \left(\frac{xy}{x+y+1}\right)*z \\
+              &= \frac{\frac{xyz}{x+y+1}}{\frac{xy}{x+y+1}+z+1} \\
+              &= \frac{xyz}{xy+z(x+y+1)+z+(x+y+1)} \\
+              &= \frac{xyz}{xy+xz+yz+x+y+z+1} \\
+              x*(y*z) &= (x*y)*z
+            \end{align*}
+          \item $\mathbb{R}$ does not have an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x \\
+              \frac{xe}{x+e+1} &= x \\
+              xe &= x(x+e+1) \\
+              e &= e+x+1
+            \end{align*}
+          \item Since there is no identity element, there can be no inverses.
+        \end{enumerate}
+    \end{enumerate}
+  \item {\bf Operations no a Two-Element Set}
+    Let $A$ be the two-element set $A=\Set{a,b}$.
+    \begin{enumerate}[label={\arabic*},font={\bfseries}]
+      \item
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_1$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_2$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_3$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_4$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_5$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_6$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_7$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_8$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $a$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_9$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{10}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{11}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{12}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $a$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{13}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{14}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $a$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{15}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $a$
+          \end{tabular}
+        \end{minipage}
+        \begin{minipage}[h]{.25\textwidth}
+          \captionof{table}{$0_{16}$}
+          \begin{tabular}{ r | l }
+            $(x,y)$ & $x*y$ \\
+            \hline
+            $(a,a)$ & $b$ \\
+            $(a,b)$ & $b$ \\
+            $(b,a)$ & $b$ \\
+            $(b,b)$ & $b$
+          \end{tabular}
+        \end{minipage}
+      \item Commutativity
+        \begin{itemize}
+          \item $0_1$ is commutative: $a*b=a=b*a$
+          \item $0_2$ is commutative: $a*b=a=b*a$
+          \item $0_3$ is not commutative: $a*b=a \neq b=b*a$
+          \item $0_4$ is not commutative: $a*b=a \neq b=b*a$
+          \item $0_5$ is not commutative: $a*b=b \neq a=b*a$
+          \item $0_6$ is not commutative: $a*b=b \neq a=b*a$
+          \item $0_7$ is commutative: $a*b=b=b*a$
+          \item $0_8$ is commutative: $a*b=b=b*a$
+          \item $0_9$ is commutative: $a*b=a=b*a$
+          \item $0_{10}$ is commutative: $a*b=a=b*a$
+          \item $0_{11}$ is not commutative: $a*b=a \neq b=b*a$
+          \item $0_{12}$ is not commutative: $a*b=a \neq b=b*a$
+          \item $0_{13}$ is not commutative: $a*b=b \neq a=b*a$
+          \item $0_{14}$ is not commutative: $a*b=b \neq a=b*a$
+          \item $0_{15}$ is commutative: $a*b=b=b*a$
+          \item $0_{16}$ is commutative: $a*b=b=b*a$
+        \end{itemize}
+      \item Associativity
+        \begin{itemize}
+          \item $0_1$ is associative:
+            $$\forall x,y \in A (x*y=a \to x*(y*z)=x*a=a=a*z=(x*y)*z)$$
+          \item $0_2$ is associative.
+            \begin{align*}
+              a*(a*a) = a*a &= (a*a)*a \\
+              a*(a*b) = a*a &= a*b = (a*a)*b \\
+              a*(b*a) = a*a &= (a*b)*a \\
+              a*(b*b) = a*b &= (a*b)*b \\
+              b*(a*a) = b*a &= a*a = (b*a)*a \\
+              b*(a*b) = b*a &= a*b = (b*a)*b \\
+              b*(b*a) = b*a &= (b*b)*a \\
+              b*(b*b) = b*b &= (b*b)*b
+            \end{align*}
+          \item $0_3$ is not associative: $b*(a*b)=b*a=b \neq a=b*b=(b*a)*b$
+          \item $0_4$ is associative.
+            \begin{align*}
+              a*(a*a) = a*a &= (a*a)*a \\
+              a*(a*b) = a*a &= a*b = (a*a)*b \\
+              a*(b*a) = a*b &= a*a = (a*b)*a \\
+              a*(b*b) = a*b &= (a*b)*b \\
+              b*(a*a) = b*a &= (b*a)*a \\
+              b*(a*b) = b*a &= b*b = (b*a)*b \\
+              b*(b*a) = b*b &= b*a = (b*b)*a \\
+              b*(b*b) = b*b &= (b*b)*b
+            \end{align*}
+          \item $0_5$ is not associative: $b*(a*b)=b*b=a \neq b=a*b=(b*a)*b$
+          \item $0_6$ is associative.
+            \begin{align*}
+              a*(a*a) = a*a &= (a*a)*a\\
+              a*(a*b) = a*b &= (a*a)*b\\
+              a*(b*a) = a*a &= b*a = (a*b)*a \\
+              a*(b*b) = a*b &= (a*b)*b \\
+              b*(a*a) = b*a &= (b*a)*a \\
+              b*(a*b) = b*b &= (b*a)*b \\
+              b*(b*a) = b*a &= (b*b)*a \\
+              b*(b*b) = b*b &= (b*b)*b
+            \end{align*}
+          \item $0_7$ is associative.
+            \begin{align*}
+              a*(a*a) = a*a &= (a*a)*a \\
+              a*(a*b) = a*b &= (a*a)*b \\
+              a*(b*a) = a*b &= b*a = (a*b)*a \\
+              a*(b*b) = a*a &= b*b = (a*b)*b \\
+              b*(a*a) = b*a &= (b*a)*a \\
+              b*(a*b) = b*b &= (b*a)*b \\
+              b*(b*a) = b*b &= a*a = (b*b)*a \\
+              b*(b*b) = b*a &= a*b = (b*b)*b
+            \end{align*}
+          \item $0_8$ is associative.
+            \begin{align*}
+              a*(a*a) = a*a &= (a*a)*a \\
+              a*(a*b) = a*b &= (a*a)*b \\
+              a*(b*a) = a*b &= b*a = (a*b)*a \\
+              a*(b*b) = a*b &= b*b = (a*b)*b \\
+              b*(a*a) = b*a &= (b*a)*a \\
+              b*(a*b) = b*b &= (b*a)*b \\
+              b*(b*a) = b*b &= b*a = (b*b)*a \\
+              b*(b*b) = b*b &= (b*b)*b
+            \end{align*}
+          \item $0_9$ is not associative: $a*(a*b)=a*a=b \neq a=b*b=(a*a)*b$
+          \item $0_{10}$ is associative.
+            \begin{align*}
+              a*(a*a) = a*b &= b*a = (a*a)*a \\
+              a*(a*b) = a*a &= b*b = (a*a)*b \\
+              a*(b*a) = a*a &= (a*b)*a \\
+              a*(b*b) = a*b &= (a*b)*b \\
+              b*(a*a) = b*b &= a*a = (b*a)*a \\
+              b*(a*b) = b*a &= a*b = (b*a)*b \\
+              b*(b*a) = b*a &= (b*b)*a \\
+              b*(b*b) = b*b &= (b*b)*b
+            \end{align*}
+          \item $0_{11}$ is not associative: $a*(a*a)=a*b=a \neq b=b*a=(a*a)*a$
+          \item $0_{12}$ is not associative: $a*(b*a)=a*b=a \neq b=a*a=(a*b)*a$
+          \item $0_{13}$ is not associative: $a*(a*a)=a*b=b \neq a=b*a=(a*a)*a$
+          \item $0_{14}$ is not associative: $a*(b*a)=a*a=b \neq a=b*a=(a*b)*a$
+          \item $0_{15}$ is not associative: $a*(a*a)=a*b=b \neq a=b*b=(a*a)*b$
+          \item $0_{16}$ is associative:
+            $$\forall x,y \in A (x*y=b \to x*(y*z)=x*b=b=b*z=(x*y)*z)$$
+        \end{itemize}
+      \item Identity
+        \begin{itemize}
+          \item $A$ does not have an identity element with respect to $0_1$.
+          \item $A$ has an identity element with respect to $0_2$.
+            \begin{align*}
+              x*e &= x \\
+              a*b &= a \\
+              b*b &= b \\
+              e &= b \\
+              e*x &= x \\
+              b*a &= a \\
+              b*b &= b \\
+              e &= b
+            \end{align*}
+          \item $A$ does not have an identity element with respect to $0_3$.
+          \item $A$ does not have an identity element with respect to $0_4$.
+          \item $A$ does not have an identity element with respect to $0_5$.
+          \item $A$ does not have an identity element with respect to $0_6$.
+          \item $A$ does not have an identity element with respect to $0_7$.
+          \item $A$ has an identity element with respect to $0_8$.
+            \begin{align*}
+              x*e &= x \\
+              a*a &= a \\
+              b*a &= b \\
+              e &= a \\
+              e*x &= x \\
+              a*a &= a \\
+              a*b &= b \\
+              e &= a
+            \end{align*}
+          \item $A$ does not have an identity element with respect to $0_9$.
+          \item $A$ has an identity element with respect to $0_{10}$.
+            \begin{align*}
+              x*e &= x \\
+              a*b &= a \\
+              b*b &= b \\
+              e &= b \\
+              e*x &= x \\
+              b*a &= a \\
+              b*b &= b \\
+              e &= b
+            \end{align*}
+          \item $A$ does not have an identity element with respect to $0_{11}$.
+          \item $A$ does not have an identity element with respect to $0_{12}$.
+          \item $A$ does not have an identity element with respect to $0_{13}$.
+          \item $A$ does not have an identity element with respect to $0_{14}$.
+          \item $A$ does not have an identity element with respect to $0_{15}$.
+          \item $A$ does not have an identity element with respect to $0_{16}$.
+        \end{itemize}
+      \item Since $A$ only has identity elements with respect to $0_2$, $0_8$,
+        and $0_{10}$, the rest cannot have inverses. As it turns out, with
+        respect to those three operations, it is not the case that every $x \in
+        A$ has an inverse.
+    \end{enumerate}
+  \item {\bf Automata: The Algebra of Input/Output Sequences} \\
+    Let $A$ be an alphabet and $A^*$ be the set of all sequences of symbols in the alphabet $A$. There is an operation on $A^*$ called {\em concatenation}: If {\bf a} and {\bf b} are in $A^*$, say $\textbf{a} = a_1a_2...a_n$ and $\textbf{b} = b_1b_2...b_m$, then $$\textbf{ab} = a_1a_2...a_nb_1b_2...b_m$$
+      The symbol $\lambda$ denotes the empty sequence.
+    \begin{enumerate}[label={\arabic*},font={\bfseries}]
+      \item Concatenation is associative.
+        %% $$a = a_1a_2...a_n; b = b_1b_2...b_m; c = c_1c_2...c_k$$
+        \begin{align*}
+          a(bc) &= a(b_1b_2...b_mc_1c_2...c_k) = a_1a_2...a_nb_1b_2...b_mc_1c_2...c_k \\
+          (ab)c &= (a_1a_2...a_nb_1b_2...b_m)c = a_1a_2...a_nb_1b_2...b_mc_1c_2...c_k \\
+          a(bc) &= (ab)c
+        \end{align*}
+      \item Concatenation is not commutative.
+        %% $$a = a_1a_2...a_n; b = b_1b_2...b_m$$
+        \begin{align*}
+          ab &= a_1a_2...a_nb_1b_2...b_m \\
+          ba &= b_1b_2...b_ma_1a_2...a_n \\
+          ab &\neq ba
+        \end{align*}
+      \item $\lambda$ is the identity element for concatenation:
+        $x\lambda = \lambda{}x = x$
     \end{enumerate}
 \end{enumerate}
