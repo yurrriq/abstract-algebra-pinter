@@ -45,7 +45,7 @@ with import nixpkgs {
 
   drv = stdenv.mkDerivation rec {
     name = "abstract-algebra-pinter-${version}";
-    version = "0.1.0";
+    version = builtins.readFile ./VERSION;
     src = ./.;
 
     buildInputs = [

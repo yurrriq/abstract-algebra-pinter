@@ -1,0 +1,76 @@
+\chapter{The Definition of Groups}
+\label{ch:the-definition-of-groups}
+\vskip -4em \citep[chapter 3]{pinter_2016}
+
+\begin{enumerate}[label={\Alph*.},font={\bfseries}]
+  \item {\bf Examples of Abelian Groups}
+    \begin{enumerate}[label={\arabic*},font={\bfseries}]
+      \item $\Group{\mathbb{R}, x*y=x+y+k}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative:
+            $x*y=x+y+k = y+x+k=y*x$
+          \item $*$ is associative.
+            \begin{alignat*}{3}
+              & x(yz) &&= x(y+z+k) &&= x+y+z+2k \\
+              & (xy)z &&= (x+y+k)z &&= (xy)z \\
+              & x(yz) &&= (xy)z
+            \end{alignat*}
+          \item $\mathbb{R}$ has an identity element with respect to $*$.
+            \begin{align*}
+              xe &= x \\
+              x+e+k &= x \\
+              e &= -k \\
+              (-k)x &= x \\
+              -k+x+k &= x
+            \end{align*}
+          \item $\forall x\in\mathbb{R}(\exists x^\prime\in\mathbb{R}(x*x^\prime=-k))$
+            \begin{alignat*}{3}
+              xx^\prime &= -k \\
+              x+x^\prime+k &= -k \\
+              x^\prime &= -x-2k \\
+              x^{\prime}x &= xx^\prime & \text{due to commutativity}
+            \end{alignat*}
+        \end{enumerate}
+      \item $\Group{\mathbb{R}^*, x*y=\frac{xy}{2}}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative:
+            $x*y=\frac{xy}{2} = \frac{yx}{2}=y*x$
+          \item $*$ is associative.
+            \begin{alignat*}{3}
+              x*(y*z) &= x*(\frac{yz}{2}) &= \frac{xyz}{4} \\
+              (x*y)*z &= (\frac{xy}{2})*z &= \frac{xyz}{4}
+            \end{alignat*}
+          \item $\mathbb{R}^*$ has an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= \frac{xe}{2} = \frac{ex}{2}=e*x = x \\
+              e &= 2
+            \end{align*}
+          \item $\forall x\in\mathbb{R}(\exists x^\prime\in\mathbb{R}(x*x^\prime=2))$
+            \begin{align*}
+              x*x^\prime &= \frac{xx^\prime}{2} = \frac{x^{\prime}x}{2} = x^{\prime}*x = e = 2 \\
+              x^\prime = \frac{4}{x}
+            \end{align*}
+        \end{enumerate}
+      \item $\Group{\Set{x\in\mathbb{R} : x \neq -1}, x*y=x+y+xy}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative: $x*y=x+y+xy = y+x+yx=y*x$
+          \item $*$ is associative.
+            \begin{alignat*}{3}
+              x*(y*z) &= x*(y+z+yz) = x+(y+z+yz)+x(y+z+yz) &= x+y+z+xy+xz+yz+xyz \\
+              (x*y)*z &= (x+y+xy)*z = (x+y+xy)+z+(x+y+xy)z &= x+y+z+xy+xz+yz+xyz
+            \end{alignat*}
+          \item $\Set{x\in\mathbb{R} : x \neq -1}$ has an identity element with respect to $*$.
+            \begin{align*}
+              x*e &= x+e+xe = e+x+ex = e*x = x \\
+              e(x+1) &= 0 \\
+              e &= 0
+            \end{align*}
+          \item Every element of $\Set{x\in\mathbb{R} : x \neq -1}$ has an inverse with respect to $*$.
+            \begin{align*}
+              x*x^\prime &= x+x^\prime+xx^\prime=x^\prime+x+x^{\prime}x = e = 0 \\
+              x^{\prime}(x+1) &= -x \\
+              x^\prime &= -\frac{x}{x+1}
+            \end{align*}
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
