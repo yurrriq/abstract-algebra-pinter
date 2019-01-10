@@ -72,5 +72,34 @@
               x^\prime &= -\frac{x}{x+1}
             \end{align*}
         \end{enumerate}
+      \item $\Group{\Set{x\in\mathbb{R} :-1 < x < 1}, x*y=\frac{x+y}{xy+1}}$
+        \begin{enumerate}[label={(\roman*)}]
+          \item $*$ is commutative: $x*y=\frac{x+y}{xy+1}=\frac{y+x}{yx+1}=y*x$
+          \item $*$ is associative.
+            \begin{alignat*}{4}
+              x*(y*z) &= x*(\frac{y+z}{yz+1})
+              &= \frac{x+(\frac{y+z}{yz+1})}{x(\frac{y+z}{yz+1})+1}
+              &= \frac{xyz+x+y+z}{xy+xz+yz+1} \\
+              (x*y)*z &= \frac{x+y}{xy+1}*z
+              &= \frac{(\frac{x+y}{xy+1})+z}{(\frac{x+y}{xy+1})z+1}
+              &= \frac{x+y+z+xyz}{xy+yz+xz+1}
+            \end{alignat*}
+          \item $\Set{x\in\mathbb{R} : -1 < x < 1}$ has an identity element w.r.t. $*$.
+            \begin{align*}
+              x*e &= \frac{x+e}{xe+1} = x \\
+              x+e &= x(xe+1) \\
+              e &= ex^2 \\
+              e(1-x^2) &= 0 \\
+              e &= 0 \\
+              x*0 &= \frac{x+0}{(x\times0)+1} = x = \frac{0+x}{0x+1} = 0*x
+            \end{align*}
+          \item Every element of $\Set{x\in\mathbb{R} : -1 < x < 1}$ has an inverse with respect to $*$.
+            \begin{align*}
+              x * x^\prime &= \frac{x+x^\prime}{xx^\prime+1} = 0; \quad
+              x+x^\prime = 0; \quad
+              x^\prime = -x \\
+              x*(-x) &= \frac{x-x}{x(-x)+1} = 0 = \frac{-x+x}{-x^2+1} = (-x)*x
+            \end{align*}
+        \end{enumerate}
     \end{enumerate}
 \end{enumerate}
