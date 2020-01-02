@@ -1,79 +1,30 @@
-let
-
-  fetchTarballFromGitHub =
-    { owner, repo, rev, sha256, ... }:
-    builtins.fetchTarball {
-      url = "https://github.com/${owner}/${repo}/tarball/${rev}";
-      inherit sha256;
-    };
-
-  fromJSONFile = f: builtins.fromJSON (builtins.readFile f);
-
-in
-
-{ nixpkgs ? fetchTarballFromGitHub (fromJSONFile ./nixpkgs-src.json) }:
-
-with import nixpkgs {
-  overlays = [
-    (self: super: {
-      xelatex = super.texlive.combine {
-        inherit (super.texlive) scheme-small
-          braket
-          datatool
-          # ebproof
-          enumitem
-          glossaries
-          hardwrap
-          latexmk
-          mfirstuc
-          substr
-          titlesec
-          # tkz-base
-          # tkz-berge
-          # tkz-graph
-          todonotes
-          tufte-latex
-          xetex
-          xindy
-          xfor;
-      };
-    })
-  ];
-};
-
 {
+  pkgs ? import ./nix/nixpkgs.nix {},
+  src ? pkgs.nix-gitignore.gitignoreSource [ ".git/" ] ./.
+}:
 
-  drv = stdenv.mkDerivation rec {
-    name = "abstract-algebra-pinter-${version}";
-    version = builtins.readFile ./VERSION;
-    src = ./.;
+pkgs.stdenv.mkDerivation rec {
+  pname = "abstract-algebra-pinter";
+  version = builtins.readFile ./VERSION;
+  inherit src;
 
-    buildInputs = [
-      xelatex
-    ];
+  buildInputs = [
+    pkgs.xelatex
+  ];
 
-    installPhase = ''
-      install -Dm755 src/exercises.pdf "$out/exercises.pdf"
+  installPhase = ''
+    install -Dm755 src/exercises.pdf "$out/exercises.pdf"
+  '';
+
+  meta = with pkgs.stdenv.lib; {
+    description = "Exercises from 'A Book of Abstract Algebra'";
+    longDescription = ''
+      Working through exercises in "A Book of Abstract Algebra"
+      by Charles C. Pinter.
     '';
-
-    meta = with stdenv.lib; {
-      description = "Exercises from 'A Book of Abstract Algebra'";
-      longDescription = ''
-        Working through exercises in "A Book of Abstract Algebra"
-        by Charles C. Pinter.
-      '';
-      homepage = https://github.com/yurrriq/abstract-algebra-pinter;
-      license = licenses.unlicense;
-      maintainers = with maintainers; [ yurrriq ];
-      platforms = platforms.all;
-    };
+    homepage = https://github.com/yurrriq/abstract-algebra-pinter;
+    license = licenses.unlicense;
+    maintainers = with maintainers; [ yurrriq ];
+    platforms = platforms.all;
   };
-
-  shell = mkShell {
-    buildInputs = [
-      gnumake
-      xelatex
-    ];
-  };
-
 }
