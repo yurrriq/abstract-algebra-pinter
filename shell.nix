@@ -8,6 +8,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     gnumake
     nixpkgs-fmt
+    pythonPackages.pywatchman
     xelatex
   ];
 }
