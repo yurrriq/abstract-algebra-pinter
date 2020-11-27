@@ -1,4 +1,4 @@
-[![Build Status][Travis badge]][Travis link]
+[![Build Status][GitHub Actions badge]][GitHub Actions link]
 [![Built with Nix][Built with Nix badge]][Built with Nix]
 
 # abstract-algebra-pinter
@@ -11,8 +11,8 @@
 
 <!-- Named Links -->
 
-[Travis badge]: https://img.shields.io/travis/yurrriq/abstract-algebra-pinter/master?style=for-the-badge
-[Travis link]: https://travis-ci.org/yurrriq/abstract-algebra-pinter
+[GitHub Actions badge]: https://img.shields.io/github/workflow/status/yurrriq/abstract-algebra-pinter/Build%20PDF/main?style=for-the-badge&logo=github
+[Github Actions link]: https://github.com/yurrriq/abstract-algebra-pinter/actions?query=workflow%3A%22Build+PDF%22+branch%3Amain
 [Built with Nix]: https://builtwithnix.org
 [Built with Nix badge]: https://builtwithnix.org/badge.svg
 [book link]: https://archive.org/details/charles-c-pinter-a-book-of-abstract-algebra

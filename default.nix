@@ -1,6 +1,5 @@
-{
-  pkgs ? import ./nix/nixpkgs.nix {},
-  src ? pkgs.nix-gitignore.gitignoreSource [ ".git/" ] ./.
+{ pkgs ? import ./nix
+, src ? pkgs.nix-gitignore.gitignoreSource [ ".git/" ] ./.
 }:
 
 pkgs.stdenv.mkDerivation rec {
@@ -8,13 +7,13 @@ pkgs.stdenv.mkDerivation rec {
   version = builtins.readFile ./VERSION;
   inherit src;
 
-  buildInputs = [
-    pkgs.xelatex
+  nativeBuildInputs = with pkgs; [
+    xelatex
   ];
 
-  installPhase = ''
-    install -Dm755 src/exercises.pdf "$out/exercises.pdf"
-  '';
+  makeFlags = [
+    "PREFIX=${placeholder "out"}"
+  ];
 
   meta = with pkgs.stdenv.lib; {
     description = "Exercises from 'A Book of Abstract Algebra'";
@@ -22,7 +21,7 @@ pkgs.stdenv.mkDerivation rec {
       Working through exercises in "A Book of Abstract Algebra"
       by Charles C. Pinter.
     '';
-    homepage = https://github.com/yurrriq/abstract-algebra-pinter;
+    homepage = "https://github.com/yurrriq/abstract-algebra-pinter";
     license = licenses.unlicense;
     maintainers = with maintainers; [ yurrriq ];
     platforms = platforms.all;

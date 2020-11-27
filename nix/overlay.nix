@@ -18,6 +18,7 @@ self: super: {
       tufte-latex
       xetex
       xindy
-      xfor;
+      xfor
+      ;
   };
 }
