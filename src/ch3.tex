@@ -102,4 +102,53 @@
             \end{align*}
         \end{enumerate}
     \end{enumerate}
+  \item {\bf Groups on the Set $\mathbb{R} \times \mathbb{R}$}
+    \begin{enumerate}[label={\arabic*},font={\bfseries}]
+    \item $(a,b) * (c,d) = (ad + bc, bd)$, on the set $\Set{(x,y)\in\mathbb{R}\times\mathbb{R} : y \ne 0}$
+      \begin{enumerate}[label={(\roman*)}]
+      \item $*$ is commutative.
+        \begin{align*}
+          (c,d) * (a,b) &= (cb+da,db) \\
+          &= (ad+bc,bd) \\
+          &= (a,b) * (c,d)
+        \end{align*}
+      \item $*$ is associative.
+        \begin{align*}
+          (a,b) * \left[(c,d) * (e,f)\right] &= (a,b) * (cf+de,df) \\
+          &= (adf+bcf+bde,bdf) \\
+          &= (ad+bc, bd) * (e,f) \\
+          &= \left[(a,b) * (c,d)\right] * (e,f)
+        \end{align*}
+      \item $(e_1,e_2) = (0,1)$
+        \begin{align*}
+          (a,b) * (e_1,e_2) &= (ae_2 + be_1, be_2) \\
+          &= (a,b) \\
+          \\
+          be_2 &= b \\
+          e_2 &= 1 \\
+          \\
+          ae_2 + be_1 &= a \\
+          a + be_1 &= a \\
+          e_1 &= 0
+        \end{align*}
+      \item $(a^\prime,b^\prime) = \left(\frac{-a}{b^2}, \frac{1}{b}\right)$
+        \begin{align*}
+          (a,b) * (a^\prime,b^\prime) &= (ab^\prime + ba^\prime, bb^\prime) \\
+          &= (0,1)
+        \end{align*}
+        \begin{align*}
+          bb^\prime &= 1 \\
+          b^\prime &= \frac{1}{b} \\
+          \\
+          ab^\prime + ba^\prime &= 0 \\
+          \frac{a}{b} + ba^\prime &= 0 \\
+          \\
+          ba^\prime &= \frac{-a}{b} \\
+          a^\prime &= \frac{-a}{b^2} \\
+          \\
+          (a,b) * \left(\frac{-a}{b^2}, \frac{1}{b}\right) &= \left(\frac{a}{b} + \frac{-a}{b}, b\left(\frac{1}{b}\right)\right) \\
+          &= (0,1)
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
 \end{enumerate}
