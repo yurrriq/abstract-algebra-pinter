@@ -1,24 +1,27 @@
 self: super: {
   xelatex = super.texlive.combine {
     inherit (super.texlive) scheme-small
+      amsrefs
       braket
+      catchfile
       datatool
-      # ebproof
+      datetime
+      ebproof
       enumitem
       glossaries
-      hardwrap
+      glossaries-extra
+      hyperref
       latexmk
       mfirstuc
-      substr
-      titlesec
-      # tkz-base
+      tkz-base
       # tkz-berge
       # tkz-graph
       todonotes
-      tufte-latex
+      tracklang
       xetex
       xindy
       xfor
+      xstring
       ;
   };
 }

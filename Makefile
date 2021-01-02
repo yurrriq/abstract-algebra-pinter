@@ -1,4 +1,4 @@
-LATEXMKFLAGS := -cd -pdfxe -Werror
+LATEXMKFLAGS := -cd -pdfxe
 ifneq (,$(findstring B,${MAKEFLAGS}))
 LATEXMKFLAGS += -gg
 endif
@@ -20,6 +20,6 @@ clobber:
 watch:
 	@ watchman-make -s 2 -p 'src/*.tex' 'src/*.bib' -t all
 
-${PREFIX}/exercises.pdf: src/exercises.tex $(filter-out src/exercises.tex, $(wildcard src/*.tex))
+${PREFIX}/exercises.pdf: src/exercises.tex src/exercises.bib $(filter-out src/exercises.tex, $(wildcard src/*.tex))
 	@ mkdir -p $(@D)
-	@ latexmk ${LATEXMKFLAGS} -outdir=$(@D) $<
+	@ latexmk ${LATEXMKFLAGS} -outdir=$(@D) -f $<

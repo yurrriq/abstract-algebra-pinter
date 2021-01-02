@@ -1,0 +1,27 @@
+name: pinter
+version: !include "./VERSION"
+synopsis: A Book of Abstract Algebra
+author: Eric Bailey
+maintainer: eric@ericb.me
+license-file: LICENSE
+license: PublicDomain
+github: yurrriq/abstract-algebra-pinter
+extra-source-files:
+- LICENSE
+- VERSION
+dependencies:
+- base
+- containers
+- groups
+ghc-options:
+- -Wall
+- -Werror
+library:
+  ghc-options:
+  - -fwarn-incomplete-patterns
+  source-dirs: src
+_executable: &executable
+  ghc-options:
+  - -O2
+  - -threaded
+  source-dirs: src

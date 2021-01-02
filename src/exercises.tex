@@ -1,10 +1,8 @@
-\documentclass{tufte-book}
+\documentclass[10pt]{amsbook}
 
 \input{preamble}
 
 \begin{document}
-
-\frontmatter
 
 %% \blankpage
 
@@ -16,18 +14,13 @@
 
 %% \listoftables
 
-\mainmatter
-
 \setcounter{chapter}{1}
 \include{ch2}
 \include{ch3}
 
-\backmatter
+%% FIXME: \bibliography{exercises}
 
-\bibliography{exercises}
-\bibliographystyle{plainnat}
-
-\phantomsection
+\appendix
 \printglossaries
 
 \end{document}
