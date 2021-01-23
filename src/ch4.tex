@@ -60,4 +60,96 @@
       b^{-1}a^{-1} &= x
     \end{align*}
   \end{enumerate}
+\item {\bf Rules of Algebra in Groups} \\
+  $$G = \Group{\Set{I,A,B,C,D,K}, \cdot}$$ \\
+  \begin{alignat*}{4}
+    & \mathbf{I} &&=
+    \begin{pmatrix}
+      \phantom{-}1 & \phantom{-}0 \\
+      \phantom{-}0 & \phantom{-}1
+    \end{pmatrix}
+    \qquad
+    \mathbf{A} &&=
+    \begin{pmatrix}
+      \phantom{-}0 & \phantom{-}1 \\
+      \phantom{-}1 & \phantom{-}0
+    \end{pmatrix}
+    \qquad
+    \mathbf{B} &&=
+    \begin{pmatrix}
+      \phantom{-}0 & \phantom{-}1 \\
+      -1 & -1
+    \end{pmatrix} \\
+    & \mathbf{C} &&=
+    \begin{pmatrix}
+      -1 & -1 \\
+      \phantom{-}0 & \phantom{-}1
+    \end{pmatrix}
+    \qquad
+    \mathbf{D} &&=
+    \begin{pmatrix}
+      -1 & -1 \\
+      \phantom{-}1 & \phantom{-}0
+    \end{pmatrix}
+    \qquad
+    \mathbf{K} &&=
+    \begin{pmatrix}
+      \phantom{-}1 & \phantom{-}0 \\
+      -1 & -1
+    \end{pmatrix}
+  \end{alignat*}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item
+    \(
+      \mathbf{A}^2 =
+      \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{pmatrix}
+      \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{pmatrix}
+      = e
+    \)
+    ... but $\mathbf{A} \ne e$, so $x^2 = e \centernot\implies x = e$.\qed
+  \item $\mathbf{A}^2 = \mathbf{I}^2$, but $\mathbf{A} \ne \mathbf{I}$, so $x^2 = a^2 \centernot\implies x = a$.\qed
+  \item $(\mathbf{A}\mathbf{B})^2 = \mathbf{K}^2 = \mathbf{I}$, and $\mathbf{A}^2\mathbf{B}^2 = \mathbf{I}\mathbf{D} = \mathbf{D}$, but $\mathbf{I} \ne \mathbf{D}$, so $(ab)^2 = a^2b^2$ is not true in every group $G$.\footnote{$(ab)^2 = a^2b^2$ is only true in abelian groups.}\qed
+  \item $x^2 = x \implies x = e$
+    \begin{align*}
+      x^2 &= x \\
+      xx &= x \\
+      xxx^{-1} &= xx^{-1} \\
+      xe &= e \\
+      x &= e
+    \end{align*}
+    \qed
+  \item
+    \captionof{table}{$\Group{\Set{I,A,B,C,D,K}, \cdot}$}
+    \begin{tabular}{ c | c c c c c c}
+      $\cdot$ & $\mathbf{I}$ & $\mathbf{A}$ & $\mathbf{B}$ & $\mathbf{C}$ & $\mathbf{D}$ & $\mathbf{K}$ \\
+      \hline
+      $\mathbf{I}$ & $\mathbf{I}$ \\
+      $\mathbf{A}$ & & $\mathbf{I}$ \\
+      $\mathbf{B}$ & & & $\mathbf{D}$ \\
+      $\mathbf{C}$ & & & & $\mathbf{I}$ \\
+      $\mathbf{D}$ & & & & & $\mathbf{B}$ \\
+      $\mathbf{K}$ & & & & & & $\mathbf{I}$
+    \end{tabular}
+
+    As shown in the table, there does not exist an $x \in G$ such that $x = y^2$ for $y \in \Set{\mathbf{A}, \mathbf{C}, \mathbf{K}}$. \\
+    Therefore $\neg\left(\forall x \in G,\ \exists y \in G\left( x = y^2 \right)\right)$.\qed
+  \item
+    \begin{align*}
+      y &= xz \\
+      x^{-1}y &= x^{-1}xz \\
+      z &= x^{-1}y
+    \end{align*}
+    Therefore, for all $x,y \in G$, there exists a $z \in G$ such that $y = xz$.\qed
+  \end{enumerate}
 \end{enumerate}
