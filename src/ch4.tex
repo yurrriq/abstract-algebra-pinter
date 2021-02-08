@@ -152,4 +152,32 @@
     \end{align*}
     Therefore, for all $x,y \in G$, there exists a $z \in G$ such that $y = xz$.\qed
   \end{enumerate}
+\newpage
+\item {\bf Elements That Commute}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $a^{-1}b^{-1} = (ba)^{-1} = (ab)^{-1} = b^{-1}a^{-1}$
+  \item Since $a = b^{-1}ba = b^{-1}ab$, $ab^{-1} = (b^{-1}ab)b^{-1} = b^{-1}a$.
+  \item $a(ab) = a(ba) = (ab)a$
+  \item $(xax^{-1})(xbx^{-1}) = xa(x^{-1}x)bx^{-1} = x(ab)x^{-1} = x(ba)x^{-1} = xb(x^{-1}x)ax^{-1} = (xbx^{-1})(xax^{-1})$
+  \item $ab = ba \iff aba^{-1} = b$
+    \begin{proof}
+      First, assume $ab = ba$.
+      Multiplying by $a^{-1}$ on the right shows $ab = ba \implies aba^{-1} = b$.
+      %%
+      Next, assume $aba^{-1} = b$.
+      Multiplying by $a$ on the right shows $aba^{-1} = b \implies ab = ba$.
+    \end{proof}
+  \item $ab = ba \iff aba^{-1}b^{-1} = e$
+    \begin{proof}
+      First, assume $ab = ba$.
+      Multiplying by $a^{-1}$ on the right yields $aba^{-1} = b$.
+      Then multiplying by $b^{-1}$ on the right yields $aba^{-1}b^{-1} = e$.
+      Thus $ab = ba \implies x$.
+      %%
+      Next, assume $aba^{-1}b^{-1} = e$.
+      Multiplying by $b$ on the right yields $aba^{-1} = b$.
+      Then multiplying by $a^{-1}$ on the right yields $ab = ba$.
+      Thus $aba^{-1}b^{-1} = e \implies ab = ba$ and $ab = ba \iff aba^{-1}b^{-1} = e$.
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
