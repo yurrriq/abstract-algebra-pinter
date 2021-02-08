@@ -180,4 +180,59 @@
       Thus $aba^{-1}b^{-1} = e \implies ab = ba$ and $ab = ba \iff aba^{-1}b^{-1} = e$.
     \end{proof}
   \end{enumerate}
+\item {\bf Group Elements and Their Inverses}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $ab = e \implies ba = e$
+    \begin{proof}
+      If $ab = e$, then $ab = aa^{-1}$, so by the cancellation law, $b = a^{-1}$ and $a = b^{-1}$. \\
+      Thus, $bb^{-1} = e \implies ba = e$, as desired.
+    \end{proof}
+  \item $abc = e \implies cab = e$ and $bca = e$.
+    \begin{proof}
+      If $(ab)c = e$, then $(ab)c = (ab)(ab)^{-1}$, so by the cancellation law, $c = (ab)^{-1} = b^{-1}a^{-1}$ \\
+      Thus, $(ab)^{-1}(ab) = e \implies c(ab) = e$, and $b(b^{-1}a^{-1})a = e \implies cba = e$.
+    \end{proof}
+  \item ...
+  \item Let $G$ be a group such that $xay = a^{-1}$ for all $a,x,y \in G$.
+    Prove that $yax = a^{-1}$ as well.
+    \begin{proof}
+      If $xay = a^{-1}$, then $(xay)a = a^{-1}a$, so by the definition of inversion, $(xay)a = e$.
+      Thus $x^{-1}(xay)ax = x^{-1}ex$, so by associativity and the definition of the identity element, $(x^{-1}x)a(yax) = e \iff ea(yax) = e \iff a(yax) = e$.
+      Multiply by $a^{-1}$ on the left to obtain $a^{-1}a(yax) = a^{-1}e$, so by the definition of inversion, $yax = a^{-1}$.
+    \end{proof}
+  \item Let $a = a^{-1}$, $b = b^{-1}$, and $c = c^{-1}$. If $ab = c$ show that $bc = a$ and $ca = b$ as well.
+    \begin{align*}
+      ab &= c \\
+      abb^{-1} &= cb^{-1} = cb \\
+      a &= cb \\
+      a^{-1} &= b^{-1}c^{-1} = bc \\
+      bc &= a \\
+      \\
+      ab &= c \\
+      b^{-1}a^{-1} &= c^{-1} \\
+      ba^{-1} &= c \\
+      ba^{-1}a &= ca \\
+      ca &= b
+    \end{align*}
+  \item Let $abc = (abc)^{-1}$, show that $bca = (bca)^{-1}$ and $cab = (cab)^{-1}$.
+    \todo[inline]{Prove it}
+  \item Let $a = a^{-1}$ and $b = b^{-1}$, show that $(ab)^{-1} = ba$.
+    \begin{proof}
+      Replace $a$ and $b$ with their inverses in $(ab)^{-1} = b^{-1}a^{-1}$
+      to obtain $(ab)^{-1} = ba$.
+    \end{proof}
+  \item $a = a^{-1} \iff a^2 = e$
+    \begin{proof}
+      If $a = a^{-1}$, then $a^2 = e$ by multiplying by $a$ on the right.
+      If $a^2 = e$, then $a = a^{-1}$ by multiplying by $a^{-1}$ on the right.
+    \end{proof}
+  \item Let $c = c^{-1}$. Prove $ab = c \iff abc = e$.
+    \begin{proof}
+      If $ab = c$, then $ab = c^{-1}$, since $c = c^{-1}$.
+      Multiply by $c$ on the right to obtain $abc = e$.
+      %%
+      If $abc = e$, then $abc^{-1} = e$ since $c = c^{-1}$.
+      Multiply by $c$ on the right to obtain $ab = c$.
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
