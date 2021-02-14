@@ -215,11 +215,21 @@
       ca &= b
     \end{align*}
   \item Let $abc = (abc)^{-1}$, show that $bca = (bca)^{-1}$ and $cab = (cab)^{-1}$.
-    \todo[inline]{Prove it}
+    \begin{align*}
+      abc &= (abc)^{-1} \\
+      bca &= a^{-1}(abc)^{-1}a \\
+      &= a^{-1}(bc)^{-1} \\
+      &= (bca)^{-1} \\
+      \\
+      bca &= (bca)^{-1} \\
+      cab &= b^{-1}(bca)^{-1}b \\
+      &= b^{-1}(ca)^{-1} \\
+      &= (cab)^{-1}
+    \end{align*}
   \item Let $a = a^{-1}$ and $b = b^{-1}$, show that $(ab)^{-1} = ba$.
     \begin{proof}
-      Replace $a$ and $b$ with their inverses in $(ab)^{-1} = b^{-1}a^{-1}$
-      to obtain $(ab)^{-1} = ba$.
+      Replace $a$ and $b$ with their inverses on the right-hand side of
+      $(ab)^{-1} = b^{-1}a^{-1}$ to obtain $(ab)^{-1} = ba$.
     \end{proof}
   \item $a = a^{-1} \iff a^2 = e$
     \begin{proof}
