@@ -1,6 +1,9 @@
 name: pinter
 version: !include "./VERSION"
 synopsis: A Book of Abstract Algebra
+description: |
+  Working through [exercises](https://yurrriq.github.io/abstract-algebra-pinter/exercises.pdf)
+  in ["A Book of Abstract Algebra" by Charles C. Pinter](https://archive.org/details/charles-c-pinter-a-book-of-abstract-algebra).
 author: Eric Bailey
 maintainer: eric@ericb.me
 license-file: LICENSE
