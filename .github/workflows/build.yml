@@ -13,17 +13,25 @@ jobs:
       uses: actions/checkout@v2
     - name: Install Nix
       uses: cachix/install-nix-action@v12
-    - name: Clone gh-pages branch
-      run: |
-        git clone --quiet --branch gh-pages --depth 1 https://x-access-token:"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git site
-        git -C site config user.name github-actions
-        git -C site config user.email github-actions@users.noreply.github.com
+      with:
+        install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210207_fd6eaa1/install
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+        nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/tarball/master
+    - uses: cachix/cachix-action@v8
+      with:
+        name: yurrriq
+        skipPush: true
     - name: Build PDF
-      run: cp -vr $(nix-build --no-out-link)/* site/
-    - name: Publish to GitHub Pages
       run: |
-        git -C site add --all .
-        git -C site commit -m 'Publish to GitHub Pages'
-        git -C site push --quiet https://x-access-token:"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git gh-pages
+        nix build
+        mkdir site
+        cp -rv result/* site/
+    - name: Publish to GitHub Pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: site
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
