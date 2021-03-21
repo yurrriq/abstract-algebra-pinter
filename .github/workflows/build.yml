@@ -24,9 +24,11 @@ jobs:
         skipPush: true
     - name: Build PDF
       run: |
-        nix build
         mkdir site
+        nix build .#pinter
         cp -rv result/* site/
+        nix build .#abstract-algebra-pinter
+        cp -rv result-doc/share/doc/pinter-*/html/
     - name: Publish to GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v2
