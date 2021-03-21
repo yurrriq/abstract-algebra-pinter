@@ -1,6 +1,6 @@
 /.ipynb_checkpoints
 /docs
-/result
+/result*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
