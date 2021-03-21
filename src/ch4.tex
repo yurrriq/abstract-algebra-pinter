@@ -245,4 +245,53 @@
       Multiply by $c$ on the right to obtain $ab = c$.
     \end{proof}
   \end{enumerate}
+\item {\bf Counting Elements and Their Inverses}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item Prove that in any finite group $G$, $2 \mid \left|\Set{x \in G : x \ne x\inverse}\right|$.
+    \begin{proof}
+      By definition, $G = \Set{x \in G : x = x\inverse} \cup \Set{x \in G : x \ne x\inverse}$.
+
+      Therefore, $\forall x \in G\left(x = x\inverse \lor \left(x \ne x\inverse \land \exists y \in G\left(y \ne x \land y = x\inverse\right)\right)\right)$.
+
+      So, $\left|\Set{x \in G : x \ne x\inverse}\right| = \left|\Set{x_0,x_0\inverse,x_1,x_1\inverse,x_2,x_2\inverse,x_3,x_3\inverse...}\right| = 2k$.
+    \end{proof}
+  \item Prove $\left|\Set{x \in G : x = x\inverse}\right|$ has the same parity as $|G|$.
+    \begin{proof}
+      Since $|G| = \left|\Set{x \in G : x = x\inverse}\right| + \left|\Set{x \in G : x \ne x\inverse}\right|$, \\
+      and $\left|\Set{x \in G : x \ne x\inverse}\right|$ is even, $\left|\Set{x \in G : x = x\inverse}\right|$ has the same parity as $|G|$.
+    \end{proof}
+  \item Prove $2 \mid |G| \implies \exists x \in G\left(x \ne e \land x = x\inverse \right)$.
+    \begin{proof}
+      If $2 \mid |G|$ then $2 \mid \left|\Set{x \in G : x = x\inverse}\right|$. Since $e = e\inverse$, $2 \nmid \left|\Set{x \in G : x \ne e \land x = x\inverse}\right|$ and thus $\exists x \in G\left(x \ne e \land x = x\inverse\right)$.
+    \end{proof}
+  \item Given a finite abelian group $G = \Set{e,a_1,a_2,...a_n}$, prove $(a_1a_2...a_n)^2 = e$.
+    \begin{align*}
+      (a_1a_2...a_n)^2 &= (a_1a_2...a_n)(a_1^{-1}a_2^{-1}...a_n^{-1}) \\
+      &= a_1a_1^{-1}a_2a_2^{-1}...a_na_n^{-1} \\
+      &= ee...e \\
+      &= e
+    \end{align*}
+    \qed
+  \item Prove $\forall x \in G\left(x \ne e \implies x \ne x\inv\right) \implies a_1a_2...a_n = e$.
+    \begin{proof}
+      Assume $\forall x \in G\left(x \ne e \implies x \ne x\inv\right)$.
+      Then $\forall x \in a_1a_2...a_n\left(\exists y \in a_1a_2...a_n\left(x \ne y \land y = x\inv\right)\right)$.
+      So $a_1a_2...a_n$ can be rewritten $a_1a_1^{-1}a_2a_2^{-}...a_{n/2}a_{n/2}^{-1}$, which reduces to $e$.
+    \end{proof}
+  \item Prove that if there is exactly one $x \ne e$ in $G$ such that $x = x\inv$ then $a_1a_2...a_n = x$.
+    \begin{proof}
+      $a_1a_2...a_n$ can be rewritten $xa_1a_1^{-1}a_2a_2^{-1}...a_{n/2}a_{n/2}^{-1}$, which is equivalent to $xe$.
+    \end{proof}
+  \end{enumerate}
+\item {\bf Constructing Small Groups}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $a,b \in G$
+    \begin{enumerate}[label={(\alph*)},font={\bfseries}]
+    \item Prove $a^2 = a \implies a = e$.
+      \begin{proof}
+        Assume $a \ne e$. $a^2 = aa$, and since $a \ne e$, $aa \ne ae$ and $aa \ne a$. Therefore $a = e$ BWOC.
+      \end{proof}
+    \item ...
+    \end{enumerate}
+  \end{enumerate}
 \end{enumerate}
