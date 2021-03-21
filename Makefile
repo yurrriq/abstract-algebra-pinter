@@ -23,3 +23,6 @@ watch:
 ${PREFIX}/exercises.pdf: src/exercises.tex src/exercises.bib $(filter-out src/exercises.tex, $(wildcard src/*.tex))
 	@ mkdir -p $(@D)
 	@ latexmk ${LATEXMKFLAGS} -outdir=$(@D) -f $<
+
+major minor patch:
+	@ semver bump $@ $(file <VERSION) | tr -d '\n' | sponge VERSION

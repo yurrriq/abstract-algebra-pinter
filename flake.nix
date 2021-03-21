@@ -16,12 +16,15 @@
     {
       devShell.x86_64-linux = pkgs.mkShell {
         buildInputs = with pkgs; [
+          coreutils
           gitAndTools.pre-commit
           gnumake
           haskellPackages.ormolu
+          moreutils
           nixpkgs-fmt
           pythonPackages.pywatchman
           # TODO: sagemath
+          semver-tool
           xelatex
         ] ++ self.packages.x86_64-linux.pinter.env.nativeBuildInputs;
       };
