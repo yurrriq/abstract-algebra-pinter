@@ -289,9 +289,80 @@
     \begin{enumerate}[label={(\alph*)},font={\bfseries}]
     \item Prove $a^2 = a \implies a = e$.
       \begin{proof}
-        Assume $a \ne e$. $a^2 = aa$, and since $a \ne e$, $aa \ne ae$ and $aa \ne a$. Therefore $a = e$ BWOC.
+        Assume $a^2 = a$. Divide by $a$ to get $a = e$.
       \end{proof}
-    \item ...
+    \item Prove $ab = a \implies b = e$.
+      \begin{proof}
+        Assume $ab = a$.
+        Multiply by $a\inv$ on the left to get ${a\inv}ab = {a\inv}a \equiv b = e$.
+      \end{proof}
+    \item Prove $ab = b \implies a = e$.
+      \begin{proof}
+        Assume $ab = b$.
+        Multiply by $b\inv$ on the right to get $ab{b\inv} = b\inv \equiv a = e$.
+      \end{proof}
     \end{enumerate}
+  \item ...\todo[inline]{Explain why elements of each row in a Cayley table must be distinct.}
+  \item There is exactly oneo group with three distinct elements.
+    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/Z_3.group}{Multiplication Table for $\mathbb{Z}_3$}}
+    \begin{tabular}{ c | c c c }
+      $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ \\
+      \hline
+      $\mathbf{e}$ & $e$ & $a$ & $b$ \\
+      $\mathbf{a}$ & $a$ & $b$ & $e$ \\
+      $\mathbf{b}$ & $b$ & $e$ & $a$
+    \end{tabular}
+    \newpage
+  \item There is exactly one group $G$ with four elements, such that $\forall x \in G (xx = e)$.
+    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/V_4.group}{Multiplication Table for $v_4$}}
+    \begin{tabular}{ c | c c c c }
+      $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ & $\mathbf{c}$  \\
+      \hline
+      $\mathbf{e}$ & $e$ & $a$ & $b$ & $c$ \\
+      $\mathbf{a}$ & $a$ & $e$ & $c$ & $b$ \\
+      $\mathbf{b}$ & $b$ & $c$ & $e$ & $a$ \\
+      $\mathbf{c}$ & $c$ & $b$ & $a$ & $e$
+    \end{tabular}
+  \item There is exactly one group $G$ with four elements, such that $\exists x \in G (x \ne e \land xx = e)$ and
+    $\exists y \in G (yy \ne e)$.
+    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/V_4.group}{Multiplication Table for $v_4$}}
+    \begin{tabular}{ c | c c c c }
+      $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ & $\mathbf{c}$  \\
+      \hline
+      $\mathbf{e}$ & $e$ & $a$ & $b$ & $c$ \\
+      $\mathbf{a}$ & $a$ & $e$ & $c$ & $b$ \\
+      $\mathbf{b}$ & $b$ & $c$ & $e$ & $a$ \\
+      $\mathbf{c}$ & $c$ & $b$ & $a$ & $e$
+    \end{tabular}
+    \item ...\todo[inline]{Explain why $\mathbb{Z}_3$ and $V_4$ are the only possible groups of order 4.}
+  \end{enumerate}
+\item {\bf Direct Products of Groups}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item Prove that $G \times H$ is a group.
+    \begin{proof}
+      \ \\
+      \begin{enumerate}[label={(G\arabic*)}]
+      \item
+        \begin{align*}
+          (x_1,y_1)\left[(x_2,y_2)(x_3,y_3)\right] &= (x_1,y_1)(x_2x_3,y_2y_3) \\
+          &= (x_1x_2x_3,y_1y_2y_3) \\
+          &= (x_1x_2,y_1y_2)(x_3,y_3) \\
+          &= \left[(x_1,y_1)(x_2,y_2)\right](x_3,y_3)
+        \end{align*}
+      \item Let $e_G$ be the identity element of $G$, and $e_H$ the identity element of $H$.
+        The identity element of $G \times H$ is $(e_G,e_H)$.
+        \begin{alignat*}{3}
+          &(x,y)(e_G,e_H) &&= (xe_G,ye_H) &&= (x,y) \\
+          \\
+          &(e_G,e_H)(x,y) &&= (e_Gx,e_Hy) &&= (x,y)
+        \end{alignat*}
+      \item $\forall (a,b) \in G \times H \left( (a,b)\inv = (a\inv,b\inv) \right)$
+        \begin{alignat*}{4}
+          &(a,b)(a\inv,b\inv) &&= (aa\inv,bb\inv) &&= (e_G,e_H) &&= e_{G \times H}\\
+          \\
+          &(a\inv,b\inv)(a,b) &&= ({a\inv}a,{b\inv}b) &&= (e_G,e_H) &&= e_{G \times H}
+        \end{alignat*}
+      \end{enumerate}
+    \end{proof}
   \end{enumerate}
 \end{enumerate}
