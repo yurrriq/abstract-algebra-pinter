@@ -45,6 +45,7 @@
             hyperref
             latexmk
             mfirstuc
+            tikz-cd
             tkz-base
             # tkz-berge
             # tkz-graph

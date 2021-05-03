@@ -364,5 +364,35 @@
         \end{alignat*}
       \end{enumerate}
     \end{proof}
+  \item $\mathbb{Z}_2 \times \mathbb{Z}_3 = \Set{(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)}$
+    \captionof{table}{$\mathbb{Z}_2 + \mathbb{Z}_3$}
+    \begin{tabular}{ c | c c c }
+      $+$ & $0$ & $1$ & $2$ \\
+      \hline
+      $0$ & $(0,0)$ & $(0,1)$ & $(0,2)$ \\
+      $1$ & $(1,0)$ & $(1,1)$ & $(1,2)$ \\
+      $2$ & $(2,0)$ & $(2,1)$ & $(2,2)$
+    \end{tabular}
+  \item If $G$ and $H$ are abelian, prove that $G \times H$ is abelian.
+    \begin{proof}
+      Assume $G$ is abelian, i.e. $\forall a,c \in G (a+c = c+a)$. Similarly, assume $H$ is abelian, i.e. \\
+      $\forall b,d \in H (b+d = d+b)$.
+      Therefore $\forall a,c \in G\ b,d \in G (a+c,b+d) = (c+a,b+d)$, i.e. $(a,b)+(c,d) = (c,d)+(a,b)$, so $G \times H$ is abelian.
+      %% Let $\pi_G : G \times G \to G$ and $\pi_H : G \times H \to H$ be the projection \glspl{homomorphism}. \\
+      %% \begin{tikzcd}[sep=large]
+      %%   P\dar[swap]{f_H}\drar[dashed]{f}\rar{f_G} & G \\
+      %%   H & {G \times H}\lar{\pi_H}\uar[swap]{\pi_G}
+      %% \end{tikzcd}
+    \end{proof}
+  \item Suppose $\forall g \in G\ g = g\inv$ and $\forall h \in H\ h = h\inv$. Prove that $\forall (g,h) \in G \times H\ (g,h) = (g,h)\inv$.
+    \begin{proof}
+      \begin{align*}
+        (g,h)(g,h) &= (g,h)(g\inv,h\inv) \\
+        &= (gg\inv,hh\inv) \\
+        &= (e_G,e_H) = e_{G \times H} \\
+        &= (g,h)(g,h)\inv \\
+        (g,h) &= (g,h)\inv
+      \end{align*}
+    \end{proof}
   \end{enumerate}
 \end{enumerate}
