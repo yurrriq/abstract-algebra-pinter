@@ -1,0 +1,65 @@
+\chapter{Subgroups}
+\label{ch:subgroups}
+%% FIXME: \cite{Pinter2016}*{Chapter 5}
+
+\begin{enumerate}[label={\Alph*.},font={\bfseries}]
+\item {\bf Recognizing Subgroups}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $G = \Group{\mathbb{R}, +}, H = \Set{\log a : a \in \mathbb{Q}_{+}}$.
+    $H \le G$.
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $\log a, \log b \in H$, then $\log a + \log b = \log ab$. But $ab \in \mathbb{Q}_{+}$, so $\log ab \in H$.
+    \item If $\log a \in H$, then $-(\log a) = \log \frac{1}{a}$. But $\frac{1}{a} \in \mathbb{Q}_{+}$, so $\log \frac{1}{a} \in H$.
+    \end{enumerate}
+  \item $G = \Group{\mathbb{R}, +}, H = \Set{\log n : n \in \mathbb{Z}_{+}}$.
+    $H \not\le G$.
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $\log n, \log m \in H$, then $\log n + \log m = \log nm$. But $nm \in \mathbb{Z}_{+}$, so $\log nm \in H$.
+    \item If $\log n \in H$, then $-(\log n) = \log \frac{1}{n}$. But $\frac{1}{n} \not\in \mathbb{Z}_{+}$, so $\log \frac{1}{n} \not\in H$.
+    \end{enumerate}
+  \item $G = \Group{\mathbb{R}, +}, H = \Set{x \in \mathbb{R} : \tan x \in \mathbb{Q}}$.
+    \todo[inline]{$H \overset{?}{<} G$.}
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $\tan x, \tan y \in H$, then $\tan x + \tan y$. \todo[inline]{Finish this}
+    \end{enumerate}
+  \item $G = \Group{\mathbb{R}^{*}, \cdot}, H = \Set{2^n3^m : m,n \in \mathbb{Z}}$.
+    \todo[inline]{$H \overset{?}{<} G$.}
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $2^a3^b, 2^c3^d \in H$, then $2^a3^b2^c3^d = ...$ \todo[inline]{Finish this}
+    \end{enumerate}
+  \item $G = \Group{\mathbb{R} \times \mathbb{R}, +}, H = \Set{(x,y) : y = 2x}$.
+    $H \le G$.
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $(a,b), (c,d) \in \mathbb{R} \times \mathbb{R}$, then $(a,b) + (c,d) = (a+c,b+d)$.
+      But $b+d = 2(a+c)$, so $(a+c,b+d) \in H$.
+    \item If $(a+c,b+d) \in H$, then $(-(a+c),-(b+d))$. But $-(b+d) = -2(a+c)$, so $(-(a+c),-(b+d)) \in H$.
+    \end{enumerate}
+  \item $G = \Group{\mathbb{R} \times \mathbb{R}, +}, H = \Set{(x,y) : x^2 + y^2 > 0}$.
+    \todo[inline]{$H \overset{?}{<} G$.}
+    \begin{enumerate}[label={(\roman*)}]
+    \item If $(a,b), (c,d) \in \mathbb{R} \times \mathbb{R}$, then $(a,b) + (c,d) = (a+c,b+d)$.
+      \todo[inline]{But $b+d = ...$, so $...$.}
+      \begin{align*}
+        (a+c)^2 + (b+d)^2 &\overset{?}{>} 0 \\
+        a^2 + c^2 + 2ac + b^2 + d^2 + 2bd &\overset{?}{>} 0 \\
+        \\
+        a^2 + b^2 &> 0 \\
+        c^2 + d^2 &> 0
+      \end{align*}
+    \end{enumerate}
+  \item Prove $C \subseteq D \implies P_C < P_D$.\todo[inline]{Prove it.}
+  \end{enumerate}
+\item {\bf Subgroups of Groups of Functions}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Group{f \in \mathscr{F}(\mathbb{R}) : f(x) = 0\ \text{for every}\ x \in [0,1]}$
+    \begin{enumerate}[label={(\roman*)}]
+    \item Suppose $f,g \in H$; then $\forall x \in [0,1]$ $f(x) = 0$ and $g(x) = 0$, so $[f+g](x) = f(x) + g(x) = 0 + 0 = 0$. Thus, $f + g \in H$.
+    \item If $f \in H$, then $\forall x \in [0,1]\ f(x) = 0$. Thus $[-f](x) = -f(x) = -0 = 0$, so $-f \in H$.
+    \end{enumerate}
+  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Group{f \in \mathscr{F}(\mathbb{R}) : f(-x) = -f(x)}$
+    \begin{enumerate}[label={(\roman*)}]
+    \item Suppose $f,g \in H$; then $f(-x) = -f(x)$ and $g(-x) = -g(x)$. Thus, $[f+g](-x) = -f(x) - g(x) = f(-x) + g(-x)$.
+    \item ...
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}

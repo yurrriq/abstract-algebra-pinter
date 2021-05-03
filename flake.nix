@@ -45,6 +45,7 @@
             hyperref
             latexmk
             mfirstuc
+            rsfs
             tikz-cd
             tkz-base
             # tkz-berge
