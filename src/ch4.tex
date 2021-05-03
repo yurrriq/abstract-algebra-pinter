@@ -395,4 +395,64 @@
       \end{align*}
     \end{proof}
   \end{enumerate}
+  \newpage
+\item {\bf Powers and Roots of Group Elements}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item Prove by induction that $\forall n \in \mathbb{N}\ (bab\inv)^n = ba^nb\inv$.
+    \begin{proof}
+      When $n=1$, $(bab\inv)^1 = ba^1b\inv$. Next, assume $(bab\inv)^n = ba^nb\inv$.
+      \begin{align*}
+        (bab\inv)^{n+1} &= (bab\inv)^n(bab\inv) \\
+        &= (ba^nb\inv)(bab\inv) \\
+        &= ba^n({b\inv}b)ab\inv \\
+        &= ba^nab\inv \\
+        &= ba^{n+1}b\inv
+      \end{align*}
+    \end{proof}
+  \item Prove by induction that $\forall n \in \mathbb{N}\ ab = ba \implies (ab)^n = a^nb^n$.
+    \begin{proof}
+      When $n=1$, $(ab)^1 = ab = a^1b^1$. Next, assume $(ab)^n = a^nb^n$.
+      \begin{align*}
+        (ab)^{n+1} &= (ab)^n(ab) \\
+        &= (a^nb^n)(ab) \\
+        &= a^nb^nab \\
+        &= a^nab^nb \\
+        &= a^{n+1}b^{n+1}
+      \end{align*}
+    \end{proof}
+  \item $xax = e \implies (xa)^{2n} = a^n$
+    \begin{proof}
+      When $n=1$, $(xa)^2 = xaxa = ea = a = a^1$. Next, assume $(xa)^{2n} = a^n$.
+      \begin{align*}
+        (xa)^{2n+2} &= (xa)^{2n}(xa)^2 \\
+        &= a^n(xa)^2 \\
+        &= a^n(xax)a \\
+        &= a^na \\
+        &= a^{n+1}
+      \end{align*}
+    \end{proof}
+  \item If $a^3 = e$, then $a$ has a square root, i.e. $a = x^2$.
+    \begin{proof}
+      Assume $a^3 = e$. Divide by $a^2$ to get $a = (a\inv)^2$.
+    \end{proof}
+  \item If $a^2 = e$, then $a$ has a cube root, i.e. $a = x^3$.
+    \begin{proof}
+      Assume $a^2 = e$. Divide by $a^{-1}$ on both sides to get $a = a\inv$.
+      Then multiply by $a^2$ on the right to get $aa^2 = {a\inv}a^2$,  or equivalently, $a = a^3$.
+    \end{proof}
+  \item If $a\inv = x^3$ then $a = y^3$
+    \begin{proof}
+      Assume $a\inv = x^3$, i.e. $a\inv = xxx$. Then $(a\inv)\inv = (xxx)\inv$, i.e. $a = ({x\inv})^3$.
+    \end{proof}
+  \item If $x^2ax = a\inv$ then $a = y^3$.
+    \begin{proof}
+      Assume $x^2ax = a\inv$. Rewrite $(xax)^3$ as $xa(x^2ax)xax$.
+      Replace $x^2ax$ with $a\inv$ to get $xa{a\inv}xax = x^2ax$.
+      Therefore $(xax)^3 = a\inv$, and so $a = \left((xax)^3\right)\inv$.
+    \end{proof}
+  \item If $xax = b$, then $ab = y^2$.
+    \begin{proof}
+      Assume $xax = b$. Then $ab = a(xax) = (ax)^2$.
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
