@@ -1,0 +1,74 @@
+\setcounter{chapter}{5}
+\chapter{Functions}
+\label{ch:functions}
+%% FIXME: \vskip -4em \citep[chapter 6]{pinter_2016}
+
+\begin{enumerate}[label={\Alph*.},font={\bfseries}]
+\item {\bf Examples of Injective and Surjective Functions} \\
+  Each of the following is a function $f : \mathbb{R} \to \mathbb{R}$.
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item $f(x) = 3x + 4$
+    \begin{enumerate}[label={\alph*},font={\bfseries}]
+    \item {\sl $f$ is injective.}
+      \begin{proof}
+        Suppose $f(a) = f(b)$, that is
+        \begin{align*}
+          3a + 4 &= 3b + 4 \\
+          3a &= 3b \\
+          a &= b
+        \end{align*}
+        Therefore $f$ is injective.
+      \end{proof}
+    \item {\sl $f$ is surjective.}
+      \begin{proof}
+        Take any element $y \in \mathbb{R}$. Then $y = 3(\frac{y-4}{3}) + 4 = f(\frac{y-4}{3})$. \\
+        Thus, every $y \in \mathbb{R}$ is equal to $f(x)$ for $x = \frac{y-4}{3}$. \\
+        Therefore $f$ is surjective.
+      \end{proof}
+    \end{enumerate}
+  \item $f(x) = x^3 + 1$
+    \begin{enumerate}[label={\alph*},font={\bfseries}]
+    \item {\sl $f$ is injective.}
+      \begin{proof}
+        Suppose $f(a) = f(b)$, that is
+        \begin{align*}
+          a^3 + 1 &= b^3 + 1 \\
+          a^3 &= b^3 \\
+          a &= b
+        \end{align*}
+        Therefore $f$ is injective.
+      \end{proof}
+    \item {\sl $f$ is surjective.}
+      \begin{proof}
+        Take any element $y \in \mathbb{R}$. Then $y = (\sqrt[3]{y-1})^3 + 1 = f(\sqrt[3]{y-1})$. \\
+        Thus, every $y \in \mathbb{R}$ is equal to $f(x)$ for $x = \sqrt[3]{y-1}$. \\
+        Therefore $f$ is surjective.
+      \end{proof}
+    \end{enumerate}
+  \item $f(x) = \abs{x}$
+    \begin{enumerate}[label={\alph*},font={\bfseries}]
+    \item {\sl $f$ is not injective.}
+      \begin{proof}
+        By exhibiting a counterexample:
+        $f(2) = 2 = f(-2)$, although $2 \ne -2$.
+      \end{proof}
+    \item {\sl $f$ is not surjective.}
+      \begin{proof}
+        By exhibiting a counterexample:
+        $-1$ is not equal to $f(x)$ for any $x \in \mathbb{R}$.
+      \end{proof}
+    \end{enumerate}
+  \item $f(x) = x^3 - 3x$
+    \begin{enumerate}[label={\alph*},font={\bfseries}]
+    \item {\sl $f$ is not injective.}
+      \begin{proof}
+        By exhibiting a counterexample:
+        $f(\sqrt{3}) = 0 = f(0)$, although $\sqrt{3} \ne 0$.
+      \end{proof}
+    \item {\sl $f$ is surjective.}
+      \begin{proof}
+        \todo[inline]{Prove it}
+      \end{proof}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}

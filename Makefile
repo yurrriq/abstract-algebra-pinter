@@ -1,4 +1,4 @@
-LATEXMKFLAGS := -cd -pdfxe
+LATEXMKFLAGS := -cd -pdf
 ifneq (,$(findstring B,${MAKEFLAGS}))
 LATEXMKFLAGS += -gg
 endif

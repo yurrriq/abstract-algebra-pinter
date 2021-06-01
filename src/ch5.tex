@@ -1,3 +1,4 @@
+\setcounter{chapter}{4}
 \chapter{Subgroups}
 \label{ch:subgroups}
 %% FIXME: \cite{Pinter2016}*{Chapter 5}
@@ -51,15 +52,141 @@
   \end{enumerate}
 \item {\bf Subgroups of Groups of Functions}
   \begin{enumerate}[label={\arabic*},font={\bfseries}]
-  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Group{f \in \mathscr{F}(\mathbb{R}) : f(x) = 0\ \text{for every}\ x \in [0,1]}$
+  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Set{f \in \mathscr{F}(\mathbb{R}) : f(x) = 0\ \text{for every}\ x \in [0,1]}$
     \begin{enumerate}[label={(\roman*)}]
     \item Suppose $f,g \in H$; then $\forall x \in [0,1]$ $f(x) = 0$ and $g(x) = 0$, so $[f+g](x) = f(x) + g(x) = 0 + 0 = 0$. Thus, $f + g \in H$.
     \item If $f \in H$, then $\forall x \in [0,1]\ f(x) = 0$. Thus $[-f](x) = -f(x) = -0 = 0$, so $-f \in H$.
     \end{enumerate}
-  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Group{f \in \mathscr{F}(\mathbb{R}) : f(-x) = -f(x)}$
+  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Set{f \in \mathscr{F}(\mathbb{R}) : f(-x) = -f(x)}$
     \begin{enumerate}[label={(\roman*)}]
-    \item Suppose $f,g \in H$; then $f(-x) = -f(x)$ and $g(-x) = -g(x)$. Thus, $[f+g](-x) = -f(x) - g(x) = f(-x) + g(-x)$.
-    \item ...
+    \item Suppose $f,g \in H$; then $f(-x) = -f(x)$ and $g(-x) = -g(x)$, so $[f+g](-x) = -f(x) - g(x) = f(-x) + g(-x)$. Thus, $f + g \in H$.
+    \item If $f \in H$, then $f(-x) = -f(x)$. Thus $[-f](x) = -f(x) = f(-x)$, and so $-f \in H$.
+    \end{enumerate}
+  \item $G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Set{f \in \mathscr{F}(\mathbb{R}) : f \text{is periodic of period} \pi}$
+    \begin{enumerate}[label={(\roman*)}]
+    \item \todo[inline]{Show that $f + g \in H$}
+    \item \todo[inline]{Show that $-f \in H$}
+    \end{enumerate}
+  \item \todo[inline]{$G = \Group{\mathscr{G}(\mathbb{R}), +}, H = \Set{f \in \mathscr{G}(\mathbb{R}) : \int_0^1 f(x)\ dx = 0}$}
+  \item \todo[inline]{$G = \Group{\mathscr{D}(\mathbb{R}), +}, H = \Set{f \in \mathscr{D}(\mathbb{R}) : df/dx\text{ is constant}}$}
+  \item \todo[inline]{$G = \Group{\mathscr{F}(\mathbb{R}), +}, H = \Set{f \in \mathscr{F}(\mathbb{R}) : f(x) \in \mathbb{Z}\text{ for every }x \in \mathbb{R}}$}
+  \end{enumerate}
+\item {\bf Subgroups of Abelian Groups} \\
+  In the following exercises, let $G$ be an abelian group.
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item
+    \begin{theorem}
+      $H = \Set{x \in G : x = x\inv} \implies H < G$
+    \end{theorem}
+    \begin{proof}
+      Assume $y, z \in H$, thus $y = y\inv$ and $z = z\inv$.
+
+      \begin{align*}
+        yz &= {y\inv}{z\inv} && \text{(substitute $x = x\inv$)} \\
+        &= {z\inv}{y\inv} && \text{(since $G$ is Oberlin)}\\
+        &= (yz)\inv && \text{(rewrite ${b\inv}{a\inv} = (ab)\inv$)}
+      \end{align*}
+      So, $H$ is closed under the group operation of $G$.
+
+      \begin{align*}
+        \forall x \in H(x = x\inv) &\implies x \in H \land x\inv \in H
+      \end{align*}
+      So, $H$ is closed under the inverse operation of $G$.
+    \end{proof}
+  \item
+    \begin{theorem}
+      $n \in \mathbb{Z} \land H = \Set{x \in G : x^n = e} \implies H < G$
+    \end{theorem}
+    \begin{proof}
+      Let $n \in \mathbb{Z}$ and $x, y \in H$, thus $x^n = e$ and $y^n = e$.
+
+      \begin{align*}
+        x^ny^n &= ee && \text{(substitute $x^n = e$ and $y^n = e$)} \\
+        &= e \\
+        &= (xy)^n && \text{(since $G$ is abelian)}
+      \end{align*}
+      So, $H$ is closed under the group operation of $G$.
+
+      \begin{align*}
+        (x\inv)^n &= (x^n)\inv \\
+        &= e\inv && \text{(substitute $x^n = e$)} \\
+        &= e
+      \end{align*}
+      So, $H$ is closed under the inverse operation of $G$.
+    \end{proof}
+  \item
+    \begin{theorem}
+      $H = \Set{x \in G : x = y^2\text{ for some }y \in G} \implies H < G$
+    \end{theorem}
+    \begin{proof}
+      Let $a, b \in H$, so $a = c^2$, $b = d^2$.
+
+      \begin{align*}
+        ab &= c^2d^2 \\
+        &= (cd)^2 && \text{(since $G$ is abelian)}
+      \end{align*}
+      So, $H$ is closed under the group operation of $G$.
+
+      \begin{align*}
+        a\inv &= (c^2)\inv \\
+        &= (c\inv)^2
+      \end{align*}
+      So, $H$ is closed under the inverse operation of $G$.
+    \end{proof}
+  \item
+    \begin{theorem}
+      $H < G \land K = \Set{x \in G : x^2 \in H} \implies K < G$
+    \end{theorem}
+    \begin{proof}
+      Let $a, b \in K$, so $a = c^2$ and $b = d^2$, and $c^2, d^2 \in G$.
+      \begin{align*}
+        ab &= c^2d^2 \\
+        &= (cd)^2 && \text{(since $G$ is abelian)}
+      \end{align*}
+      So, $K$ is closed under the group operation of $G$.
+
+      \begin{align*}
+        a\inv &= (c^2)\inv \\
+        &= (c\inv)^2
+      \end{align*}
+      So, $K$ is closed under the inverse operation of $G$.
+    \end{proof}
+  \item \todo[inline]{Prove $H < G \land K = \Set{x \in G : \exists n \in \mathbb{Z}^+(x^n \in H)} \implies K < G$.}
+  \item \todo[inline]{Prove $H < G \land K < G \land HK = \Set{xy : x \in H \land y \in K} \implies HK < G$.}
+  \item \todo[inline]{Explain why parts 4-6 are not true if $G$ is not abelian.}
+  \end{enumerate}
+\item {\bf Subgroups of an Arbitrary Group}
+  \begin{enumerate}[label={\arabic*},font={\bfseries}]
+  \item
+    \begin{theorem}
+      $H < G \land K < G \implies H \cap K < G$
+    \end{theorem}
+
+    \begin{align*}
+      \forall a,b \in H(ab \in H) && \text{(since $H < G$)} \\
+      \forall a,b \in K(ab \in K) && \text{(since $K < G$)} \\
+      \forall a, b \in H \cap K(ab \in H \cap K) && \text{(since $ab \in H \land ab \in K$)}
+    \end{align*}
+    So, $H \cap K$ is closed under the group operation of $G$.
+
+    \begin{align*}
+      \forall c \in H \cap K(c \in H \land c \in K \implies c\inv \in H \land c\inv \in K \implies c\inv \in H \cap K) && \text{(since $H, K < G$)}
+    \end{align*}
+    So, $H \cap K$ is closed under the inverse operation of $G$.
+  \item \todo[inline]{...}
+  \item \todo[inline]{...}
+  \item \todo[inline]{...}
+  \item \todo[inline]{...}
+  \item \todo[inline]{...}
+  \item
+    \begin{enumerate}[label={(\alph*)}]
+    \item \todo[inline]{...}
+    \item \todo[inline]{...}
+    \end{enumerate}
+  \item
+    \begin{enumerate}[label={(\alph*)}]
+    \item \todo[inline]{...}
+    \item \todo[inline]{...}
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}
