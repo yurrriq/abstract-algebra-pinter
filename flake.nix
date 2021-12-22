@@ -11,9 +11,12 @@
           self.overlay
         ];
       };
+
       src = pkgs.nix-gitignore.gitignoreSource [ ".git/" ] ./.;
     in
     {
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.abstract-algebra-pinter;
+
       devShell.x86_64-linux = pkgs.mkShell {
         buildInputs = with pkgs; [
           coreutils
@@ -28,7 +31,6 @@
           xelatex
         ] ++ self.packages.x86_64-linux.pinter.env.nativeBuildInputs;
       };
-
 
       overlay = final: prev: {
         xelatex = prev.texlive.combine {
@@ -84,12 +86,10 @@
               homepage = "https://github.com/yurrriq/abstract-algebra-pinter";
               license = licenses.unlicense;
               maintainers = with maintainers; [ yurrriq ];
-              platforms = platforms.all;
+              platforms = [ pkgs.system ];
             };
           };
         pinter = pkgs.haskellPackages.callCabal2nix "pinter" src { };
       };
-
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.abstract-algebra-pinter;
     };
 }
