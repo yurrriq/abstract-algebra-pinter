@@ -212,7 +212,7 @@
         &= (ac-bd,ad+bc) * (e,f) \\
         &= \left[(a,b) * (c,d)\right] * (e,f)
       \end{align*}
-    \item $(e_1,e_2) = (?,?)$
+    \item $(e_1,e_2) = (1 - \frac{ae_2}{b},\frac{ae_1-a}{b})$
       \begin{align*}
         (a,b) * (e_1,e_2) &= (ae_1-be_2,ae_2+be_1) \\
         &= (a,b) \\
@@ -227,8 +227,9 @@
         e_2 &= \frac{ae_1-a}{b}
       \end{align*}
     \end{enumerate}
+    \item \todo[inline]{Consider whether $(a, b) * (c, d) = (ac, bc + d)$, on the set $\Set{(x,y)\in\mathbb{R}\times\mathbb{R}}$ is a group.}
   \end{enumerate}
-  \newpage
+  %% \newpage
 \item {\bf Groups of Subsets of a Subset}
   \begin{enumerate}[label={\arabic*},font={\bfseries}]
   \item The identity element with respect to the operation $+$ is $\emptyset$.
@@ -353,7 +354,7 @@
   \begin{enumerate}[label={\arabic*},font={\bfseries}]
   \item $\Seq{a_1,a_2,...,a_n} + \Seq{b_1,b_2,...,b_n} = \Seq{b_1,b_2,...,b_n} + \Seq{a_1,a_2,...,a_n}$,
     since the left-hand side is equivalent to $\Seq{a_1+b_1,a_2+b_2,...,a_n+b_n}$,
-    which by commutativity is equivalent to $\Seq{b_1+a_1,b_2+a_2,...,b_n+a_n}$,
+    which by the commutativity of bit addition is equivalent to $\Seq{b_1+a_1,b_2+a_2,...,b_n+a_n}$,
     which is equivalent to $\Seq{b_1,b_2,...,b_n} + \Seq{a_1,a_2,...,a_n}$.
   \item
     \begin{alignat*}{5}
@@ -465,5 +466,9 @@
     \item $10001 \to 10011$
     \item $10111 \to 10011\ or\ 00111$
     \end{itemize}
+  \item \todo[inline]{Prove that it is possible to detect up to $m-1$ errors.}
+  \item \todo[inline]{If $t=\frac{1}{2}(m-1)$, prove that any two spheres of radius $t$, say $S_t(a)$ and $S_t(b)$, have no elements in common.}
+  \item \todo[inline]{Deduce from part 6 that if there are $t$ or fewer errors of transmission in a codeword, the received word will be decoded correctly.}
+  \item \todo[inline]{In $C_2$, explain why two errors in any codeword can always be detected, and why one error in any codeword can always be corrected.}
   \end{enumerate}
 \end{enumerate}

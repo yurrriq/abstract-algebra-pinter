@@ -159,8 +159,16 @@
   \item $a^{-1}b^{-1} = (ba)^{-1} = (ab)^{-1} = b^{-1}a^{-1}$
   \item Since $a = b^{-1}ba = b^{-1}ab$, $ab^{-1} = (b^{-1}ab)b^{-1} = b^{-1}a$.
   \item $a(ab) = a(ba) = (ab)a$
+  \item $a^2b^2 = b^2a^2$
+    \begin{proof}
+      First, Assume $a^2b^2 = b^2a^2$, that is $aabb = bbaa$.
+      Since $a$ and $b$ commute, $abab = baba$, $abba = abba$, $baba = abab$, and $bbaa = aabb$.
+      %%
+      Next, assume $bbaa = aabb$.
+      Since $a$ and $b$ commute, $baba = abab$, $abba = baab$, $abab = baba$, and $aabb = bbaa$.
+    \end{proof}
   \item $(xax^{-1})(xbx^{-1}) = xa(x^{-1}x)bx^{-1} = x(ab)x^{-1} = x(ba)x^{-1} = xb(x^{-1}x)ax^{-1} = (xbx^{-1})(xax^{-1})$
-  \item $ab = ba \iff aba^{-1} = b$
+  \item $ab = ba \iff ab{a\inverse} = b$
     \begin{proof}
       First, assume $ab = ba$.
       Multiplying by $a^{-1}$ on the right shows $ab = ba \implies aba^{-1} = b$.
@@ -168,7 +176,7 @@
       Next, assume $aba^{-1} = b$.
       Multiplying by $a$ on the right shows $aba^{-1} = b \implies ab = ba$.
     \end{proof}
-  \item $ab = ba \iff aba^{-1}b^{-1} = e$
+  \item $ab = ba \iff ab{a\inverse}{b\inverse} = e$
     \begin{proof}
       First, assume $ab = ba$.
       Multiplying by $a^{-1}$ on the right yields $aba^{-1} = b$.
@@ -304,7 +312,7 @@
       \end{proof}
     \end{enumerate}
   \item ...\todo[inline]{Explain why elements of each row in a Cayley table must be distinct.}
-  \item There is exactly oneo group with three distinct elements.
+  \item There is exactly one group with three distinct elements.
     \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/Z_3.group}{Multiplication Table for $\mathbb{Z}_3$}}
     \begin{tabular}{ c | c c c }
       $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ \\
@@ -313,9 +321,9 @@
       $\mathbf{a}$ & $a$ & $b$ & $e$ \\
       $\mathbf{b}$ & $b$ & $e$ & $a$
     \end{tabular}
-    \newpage
+    %% \newpage
   \item There is exactly one group $G$ with four elements, such that $\forall x \in G (xx = e)$.
-    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/V_4.group}{Multiplication Table for $v_4$}}
+    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/V_4.group}{Multiplication Table for $V_4$}}
     \begin{tabular}{ c | c c c c }
       $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ & $\mathbf{c}$  \\
       \hline
@@ -325,17 +333,17 @@
       $\mathbf{c}$ & $c$ & $b$ & $a$ & $e$
     \end{tabular}
   \item There is exactly one group $G$ with four elements, such that $\exists x \in G (x \ne e \land xx = e)$ and
-    $\exists y \in G (yy \ne e)$.
-    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/V_4.group}{Multiplication Table for $v_4$}}
+    $\exists y \in G (yy \ne e)$. $bb = e$ and $aa = cc = e$.
+    \captionof{table}{\href{https://nathancarter.github.io/group-explorer/Multtable.html?groupURL=https://nathancarter.github.io/group-explorer/groups/Z_4.group}{Multiplication Table for $\mathbb{Z}_4$}}
     \begin{tabular}{ c | c c c c }
       $\cdot$ & $\mathbf{e}$ & $\mathbf{a}$ & $\mathbf{b}$ & $\mathbf{c}$  \\
       \hline
       $\mathbf{e}$ & $e$ & $a$ & $b$ & $c$ \\
-      $\mathbf{a}$ & $a$ & $e$ & $c$ & $b$ \\
+      $\mathbf{a}$ & $a$ & $b$ & $c$ & $e$ \\
       $\mathbf{b}$ & $b$ & $c$ & $e$ & $a$ \\
-      $\mathbf{c}$ & $c$ & $b$ & $a$ & $e$
+      $\mathbf{c}$ & $c$ & $e$ & $a$ & $b$
     \end{tabular}
-    \item ...\todo[inline]{Explain why $\mathbb{Z}_3$ and $V_4$ are the only possible groups of order 4.}
+    \item \todo[inline]{Explain why $V_4$ and $\mathbb{Z}_4$ are the only possible groups of order 4.}
   \end{enumerate}
 \item {\bf Direct Products of Groups}
   \begin{enumerate}[label={\arabic*},font={\bfseries}]
@@ -396,7 +404,7 @@
       \end{align*}
     \end{proof}
   \end{enumerate}
-  \newpage
+  %% \newpage
 \item {\bf Powers and Roots of Group Elements}
   \begin{enumerate}[label={\arabic*},font={\bfseries}]
   \item Prove by induction that $\forall n \in \mathbb{N}\ (bab\inv)^n = ba^nb\inv$.
