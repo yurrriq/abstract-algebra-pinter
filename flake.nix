@@ -1,7 +1,7 @@
 {
   description = ''Exercises from "A Book of Abstract Algebra"'';
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/release-20.09";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
 
   outputs = { self, nixpkgs }:
     let
