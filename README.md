@@ -11,7 +11,7 @@
 
 <!-- Named Links -->
 
-[GitHub Actions badge]: https://img.shields.io/github/workflow/status/yurrriq/abstract-algebra-pinter/Build%20PDF/main?style=for-the-badge&logo=github
+[GitHub Actions badge]: https://img.shields.io/github/actions/workflow/status/yurrriq/abstract-algebra-pinter/build.yml?branch=main&style=for-the-badge&logo=github
 [Github Actions link]: https://github.com/yurrriq/abstract-algebra-pinter/actions?query=workflow%3A%22Build+PDF%22+branch%3Amain
 [Built with Nix]: https://builtwithnix.org
 [Built with Nix badge]: https://builtwithnix.org/badge.svg
